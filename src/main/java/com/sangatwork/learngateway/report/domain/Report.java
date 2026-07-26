@@ -1,9 +1,24 @@
 package com.sangatwork.learngateway.report.domain;
 
+import java.time.Instant;
+import java.util.UUID;
+
 public class Report {
 
-    private String id;
+    private UUID id;
     private String title;
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    private String description;
+    private ReportStatus status;
+    private Instant createdAt;
 
     @Override
     public String toString() {
@@ -16,12 +31,10 @@ public class Report {
                 '}';
     }
 
-    private String description;
-    private String status;
-    private String createdAt;
 
 
-    public Report(String id, String title, String description, String status, String createdAt) {
+
+    public Report(UUID id, String title, String description, ReportStatus status, Instant createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -29,7 +42,7 @@ public class Report {
         this.createdAt = createdAt;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -50,20 +63,18 @@ public class Report {
         this.description = description;
     }
 
-    public String getStatus() {
+    public ReportStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ReportStatus status) {
         this.status = status;
     }
 
-    public String getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
+
 
 }

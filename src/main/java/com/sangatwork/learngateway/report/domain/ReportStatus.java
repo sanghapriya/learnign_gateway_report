@@ -1,11 +1,11 @@
 package com.sangatwork.learngateway.report.domain;
 
-public class ReportStatus {
 
-  public enum Status {
+
+  public enum ReportStatus {
     PENDING,
     IN_PROGRESS,
     COMPLETED,
     FAILED
   }
-}
+
